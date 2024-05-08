@@ -11,10 +11,15 @@ body{
 
 h1{font-size:large;
     color: #c54b82}
+
 h2{font-size: 2em;
 color: #c54b82;
+text-align: top;
+text-align: center;
 }
+
 h3{font-size: 1.5em;}
+
 p{font-size: 1.20em}
 
 button{
@@ -27,6 +32,7 @@ button{
     color:#c54b82;
     background-color:#e9c5d5;
 }
+
 
 button:hover{ /*cuando se pasa el cursor por encima*/
     background-color:#ea98bd;
@@ -44,7 +50,7 @@ header{
 
 header .name {
     margin: 0;
-    padding: 10px 0;
+    padding: 25px 0;
     font-family: 'Roboto', sans-serif;
     color: #c54b82;
     text-align: center;
@@ -55,7 +61,7 @@ header .name {
 header nav{ /*caracteristicas del recuadro*/
     display: flex;
     flex-direction:row;
-    padding-bottom: 25px;
+    padding-bottom: 10px;
     text-align: center;
 }
 
@@ -82,7 +88,7 @@ header a:hover{
         rgba(0,0,0,0.2),
         rgba(0,0,0,0.2)
         )
-    , url("fondo.jpeg");
+    , url("https://publish.purewow.net/wp-content/uploads/sites/2/2023/10/Ulta-8-elf-cosmetics-lip-oil-spotlight-UNIV.jpg?fit=2050%2C1100");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -97,151 +103,154 @@ header a:hover{
     padding: 100px 12px;
 }
 
-.nuestros-productos{
-    background-color: #e9c5d5;
-    color:white
-}
-
-.nuestros-productos .container{
-    padding: 90px;
-    text-align: center;
-}
-
 .nuestros-productos p{
     display: none;
 }
 
 /*los clasificamos para diferenciarlos*/
 
-.carta1{
-    
+.nuestros-productos {
+    background-color: #e9c5d5;
+    color: white;
+    text-align: center; /* Centra el texto */
+    padding: 50px 0; /* Ajusta el padding para el espacio alrededor del texto */
+}
+
+.nuestros-productos .container {
+    text-align: center;
+}
+
+.programas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra las cartas */
+}
+
+/* Estilos para las cartas */
+.carta {
     height: 400px;
     width: 500px;
-    margin: 0 auto;
+    margin: 20px; /* Espaciado entre las cartas */
     border-radius: 15px;
     position: relative;
     text-align: center;
     overflow: hidden;
     background-position: center center;
     background-size: cover;
-    background-image: linear-gradient(
-        0deg,
-        rgba(0,0,0,0.2),
-        rgba(0,0,0,0.2)
-        )
-    , url("rostro.png");
-    }
-    .carta1 h3 { /*CENTRAR TEXTO*/
-        position: absolute;
-        top: 50%; 
-        left: 50%;
-        transform: translate(-50%, -50%);
-        margin: 0;
-    }
-    .carta1 button { /*CENTRAR BOTON*/
-        position: absolute;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-   
-.carta2{
-    height: 400px;
-    width: 500px;
-    margin: 0 auto;
-    border-radius: 15px;
-    position: relative;
-    text-align: center;
-    overflow: hidden;
-    background-image: linear-gradient(
-        0deg,
-        rgba(0,0,0,0.2),
-        rgba(0,0,0,0.2)
-        )
-    , url("ojos.png");
-    }
-    .carta2 h3 {
-        position: absolute;
-        top: 50%; 
-        left: 50%;
-        transform: translate(-50%, -50%);
-        margin: 0;
-    }
-    .carta2 button {
-        position: absolute;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-.carta3{
-    height: 400px;
-    width: 500px;
-    margin: 0 auto;
-    border-radius: 15px;
-    position: relative;
-    text-align: center;
-    overflow: hidden;
-    background-image: linear-gradient(
-        0deg,
-        rgba(0,0,0,0.2),
-        rgba(0,0,0,0.2)
-        )
-    , url("rubor.png");
+    background-image: linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2));
 }
-    .carta3 h3 {
-        position: absolute;
-        top: 50%; 
-        left: 50%;
-        transform: translate(-50%, -50%);
-        margin: 0;
-    }
-    .carta3 button {
-        position: absolute;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
 
-.carta4{
-    height: 400px;
-    width: 500px;
-    margin: 0 auto;
+.carta button {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.cuadro {
+    height: 300px;
+    width: 300px;
+    margin: 20px; /* Espaciado entre las cartas */
     border-radius: 15px;
     position: relative;
     text-align: center;
     overflow: hidden;
-    background-image: linear-gradient(
-        0deg,
-        rgba(0,0,0,0.2),
-        rgba(0,0,0,0.2)
-        )
-    , url("labios.png");
+    background-position: center center;
+    background-size: cover;
+    background-image: linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2));
 }
-    .carta4 h3 {
-        position: absolute;
-        top: 50%; 
-        left: 50%;
-        transform: translate(-50%, -50%);
-        margin: 0;
-    }
-    .carta4 button {
-        position: absolute;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-    }
 
-#vision .container{
-    text-align: center;
-    padding: 90px;
-    }
+.texto-box {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color:#e9c5d5; /* Adjust opacity to your preference */
+    padding: 5px;
+    box-sizing: border-box;
+}
 
-#mision .container{
+.mas-vendidos h2 {
     text-align: center;
-    padding: 90px;
-    background-color: #e9c5d5;
-    }
+    color: #c54b82;
+}
+
+.texto-box p {
+    color: #fff;
+    font-size: 12px; /* Adjust font size as needed */
+    text-align: justify;
+    margin: 0;
+    padding: 5px 0;
+}
+
+.resena {
+    height: 250px;
+    width: 225px;
+    margin: 20px; /* Espaciado entre las cartas */
+    border-radius: 15px;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    background-position: center center;
+    background-size: cover;
+    background-image: linear-gradient(0deg, rgba(0,0,0,0.2), rgba(0,0,0,0.2));
+}
+
+#vision, #mision {
+    width: 1200px;
+    margin: 20px auto; /* Centra los recuadros horizontalmente */
+    border-radius: 15px;
+    overflow: hidden;
+    background-position: center center;
+    background-size: cover;
+}
+
+.image-left, .image-right {
+    position: absolute;
+    top: 0;
+    width: 100px; /* Ancho de la imagen */
+    height: 100%; /* Altura igual al contenedor */
+    background-size: cover;
+}
+
+.image-left {
+    left: -100px; /* Posición a la izquierda del contenedor */
+    background-image: url('baseDior.jpg'); /* Ruta de la imagen izquierda */
+}
+
+.image-right {
+    right: -100px; /* Posición a la derecha del contenedor */
+    background-image: url('baseDior.jpg'); /* Ruta de la imagen derecha */
+}
+
+#vision {
+    background-color: #e9c5d5; /* Color de fondo de Visión */
+}
+
+#mision {
+    background-color: #e9c5d5; /* Color de fondo de Misión */
+}
+
+.container {
+    padding: 20px;
+    box-sizing: border-box; /* Incluye el padding en las dimensiones */
+}
+
+.titulo {
+    margin-top: 0; /* Elimina el margen superior del título */
+    text-align: center; /* Centra horizontalmente */
+}
+
+.vision-container, .mision-container {
+    text-align: justify; /* Justifica el texto */
+}
+
+.vision h2, .mision h2 {
+    font-size: 2em;
+    color: #c54b82;
+    text-align: left;
+    margin-top: 0; /* Elimina el margen superior del título */
+    padding: 20px;
+}
 
 .footer{
     text-align: center;
@@ -257,6 +266,7 @@ footer .container{
 }
 
 .footerC{
+    width: 1400px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -267,29 +277,6 @@ footer .container{
 .footerC > div{
     width: 33%;
     } 
-
-.reseñas{
-        text-align: center;
-        color:#000000;
-        padding: 5em;
-        }
-        
-.reseñas .container{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-    
-.reseñasC{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        }
-    
-    
-.reseñas > div{
-        width: 33%;
-        } 
 
     @media(min-width: 720px){
         header{

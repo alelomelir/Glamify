@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="registroProducto.css">
+</head>
+<header>
+   
+</header>
+<div class="container">
+<div class="login-box">
+    <h2>Registro de Productos</h2>
+    <form action="./registroProducto.php" method="post" class="user-box">
+        <div class="auto-details">
+            <div class="input-box">
+                <span class="details">Nombre</span>
+                <input type="text" name="nombre" placeholder="Ingresa el nombre" required>
+            </div>
+            <div class="input-box">
+                <span class="details">Categoria</span>
+                <input type="text" name="categoria" placeholder="Ingresa la categoria" required>
+            </div>
+            <div class="input-box">
+                <span class="details">Descripción</span>
+                <input type="text" name="descripcion" placeholder="Ingresa la descripcion" required>
+            </div>
+            <div class="input-box">
+                <span class="details">Precio</span>
+                <input type="text" name="precio" placeholder="Ingresa el precio" required>
+            </div>
+            <div class="input-box">
+                <span class="details">Imagen</span>
+                <input type="text" name="imagen" placeholder="Ingresa el URL" required>
+            </div>
+        </div>
+        <div class="button">
+            <input type="submit" value="Agregar" name="agregardatos">
+        </div>
+        <div class="button">
+            <input type="submit" value="Modificar" name="modificardatos">
+        </div>
+        <div class="button">
+            <input type="submit" value="Eliminar" name="eliminardatos">
+        </div>
+    </form>
+</div>
+</div>
+</html>

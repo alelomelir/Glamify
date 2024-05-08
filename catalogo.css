@@ -1,0 +1,175 @@
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: #e3aec6;
+}
+
+header {
+    background-color: #e9c5d5;
+    margin-bottom: 10px; /* Agregar un margen inferior de 10px */
+}
+
+.producto,
+.producto-abajo {
+    width: calc(33.33% - 20px); /* Cambiado a 33.33% para 3 columnas */
+    margin-bottom: 20px;
+    border: 1px solid #cd9cb2;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 10px; /* Bordes redondos */
+    transition: transform 0.3s; /* Transición para agrandar */
+    background-color: #e9c6d6;
+}
+
+header a {
+    padding-left: 5px;
+    font-family: 'roboto', sans-serif;
+    color: #ffffff;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.producto:hover,
+.producto-abajo:hover {
+    transform: scale(1.05); /* Agranda el recuadro al pasar el cursor */
+}
+
+.producto img,
+.producto-abajo img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.descripcion h2 {
+    margin-top: 0;
+}
+
+.descripcion p {
+    margin-bottom: 5px;
+}
+
+/* Agregar separación entre los recuadros */
+.producto,
+.producto-abajo {
+    margin-right: 10px;
+}
+
+/* Eliminar margen derecho del último recuadro en cada fila */
+.producto:nth-child(3n),
+.producto-abajo:nth-child(3n) {
+    margin-right: 0;
+}
+
+.container{
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+}
+
+header{
+    background-color: #e9c5d5;
+}
+
+header .name {
+    margin: 0;
+    padding: 25px 0;
+    font-family: 'Roboto', sans-serif;
+    color: #c54b82;
+    text-align: center;
+    size: 50px;
+}
+
+
+header nav{ /*caracteristicas del recuadro*/
+    display: flex;
+    flex-direction:row;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+header a{ /*texto dentro de la primer seccion*/
+    padding-left: 5px;
+    font-family: 'roboto', sans-serif;
+    color: #c54b82;
+
+}
+
+header a:hover{
+    color:#ea98bd; /*cambio de color de letra cuando pasa el cursor*/
+}
+
+#btn-menu{
+    display: none;
+  }
+  
+  .container-menu{
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    top: 0;right: 0;
+    transition: all 500ms ease;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+  }
+  
+  #btn-menu:checked ~ .container-menu{
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .cont-menu{
+    margin-top: 87px;
+    width: 100%;
+    max-width: 250px;
+    background: #1c1c1c;
+    height: 30vh;
+    margin-right: 100vh;
+    position: relative;
+    transition:all 500ms ease ;
+    transform: translateX(-300%);
+  }
+  
+  #btn-menu:checked~.container-menu .cont-menu{
+    transform: translateX(300%);
+  }
+  
+  .cont-menu nav{
+    transform: translateY(15%);
+  }
+  
+  .cont-menu nav a{
+    display: block;
+    text-decoration: none;
+    padding: 20px;
+    color: #c7c7c7;
+    border-left: 5px solid transparent;
+    transition: all 400ms ease;
+  }
+  
+  .cont-menu nav a:hover{
+    border-left: 5px solid purple;
+    background: #1f1f1f;
+  }
+  
+  .cont-menu label{
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+  }

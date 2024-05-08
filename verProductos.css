@@ -1,0 +1,32 @@
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: #e9c5d5;
+}
+
+.container {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  height: 100vh; /* Toma el 100% de la altura de la ventana del navegador */
+}
+
+.tabla {
+  border-collapse: collapse; /* Colapsa los bordes de la tabla */
+}
+
+.tabla th,
+.tabla td {
+  border: 2px solid #c54b82; /* Establece el color de borde rosa */
+  padding: 8px; /* Añade espacio interno */
+}
+
+.imagen{
+  background-size: cover;
+  background-position:center;
+}
