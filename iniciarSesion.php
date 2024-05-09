@@ -18,7 +18,7 @@ if ($filas["correo"]) {
 
     if ($_SESSION['nombre'] === "AleLomeli") {
         $_SESSION['admin'] = true;
-        header("location: ./verProductos.php");
+        header("location: ./catalogo.php");
 
     } else {
         $_SESSION['admin'] = false;

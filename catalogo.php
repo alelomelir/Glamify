@@ -23,7 +23,12 @@ session_start();
                 if (isset($_SESSION['correo'])) {
                     ?> <a href="cerrar.php"> Cerrar Sesión </a>
                     <a href="carrito.php"> Carrito </a>
-                <?php } else { ?>
+                    <?php
+                    if (($_SESSION['admin'])) {
+
+                        ?> <a href="verProductos.php"> Ver productos </a>
+                    <?php }
+                } else { ?>
                     <a href="inicioSesion.php"> Iniciar Sesión </a>
                     <?php
                 }
