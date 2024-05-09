@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,6 +26,11 @@
         <?php
       }
       ?>
+
+      <?php if ($_SESSION['admin']) { ?>
+        <a href="registroProducto.php"> Agregar Productos </a>
+        <?php
+      } ?>
 
     </nav>
   </div>

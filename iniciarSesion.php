@@ -14,8 +14,16 @@ if ($filas["correo"]) {
     $_SESSION['id'] = $filas["id"];
     $_SESSION['nombre'] = $filas["nombre"];
     $_SESSION['contrasena'] = $filas["contrasena"];
+    $_SESSION['correo'] = $filas["correo"];
 
-    header("location: catalogo.php");
+    if ($_SESSION['nombre'] === "AleLomeli") {
+        $_SESSION['admin'] = true;
+        header("location: ./verProductos.php");
+
+    } else {
+        $_SESSION['admin'] = false;
+        header("location: ./catalogo.php");
+    }
 
 } else {
     header("Location: ./inicioSesion.php");

@@ -45,12 +45,6 @@ session_start();
         </div>
     </header>
 
-    <!-- Formulario de búsqueda -->
-    <form action="busqueda.php" method="GET">
-        <input type="text" name="query" placeholder="Buscar productos...">
-        <button type="submit">Buscar</button>
-    </form>
-
     <div class="container">
         <?php
         include "conexion.php"; // Incluye el archivo de conexión
