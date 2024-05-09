@@ -1,3 +1,7 @@
+<?php
+include "./conexion.php";
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -14,8 +18,18 @@
         <div class="container">
             <p class="name">Glamify</p>
             <nav>
-                <a href="inicioSesion.php">Iniciar Sesión <i class="fas fa-house"></i></a>
+
+                <?php
+                if (isset($_SESSION['correo'])) {
+                    ?> <a href="cerrar.php"> Cerrar Sesión </a>
+                    <a href="carrito.php"> Carrito </a>
+                <?php } else { ?>
+                    <a href="inicioSesion.php"> Iniciar Sesión </a>
+                    <?php
+                }
+                ?>
                 <a href="index.html">Home <i class="fas fa-house"></i></a>
+                <a href="verProductos.php"> Ver productos </a>
             </nav>
         </div>
         <input type="checkbox" id="btn-menu">
@@ -57,7 +71,17 @@
                         <p>Categoría: <?php echo $row['categoria'] ?></p>
                         <p>Descripción: <?php echo $row['descripcion'] ?></p>
                         <p>Precio: <?php echo $row['precio'] ?></p>
+
+                        <form action="agregarCarrito.php" method="POST">
+                            <input type="hidden" value="<?php $row['nombre'] ?>" name="nombre">
+                            <input type="hidden" value="<?php $row['categoria'] ?>" name="categoria">
+                            <input type="hidden" value="<?php $row['descripcion'] ?>" name="descripcion">
+                            <input type="hidden" value="<?php $row['precio'] ?>" name="precio">
+                            <input type="submit">Agregar al carrito</input>
+
+                        </form>
                     </div>
+
                 </div>
                 <?php
             }
@@ -73,7 +97,7 @@
 
 </html>
 <?php
-include "./registro.php";
+include "./conexion.php";
 session_start();
 
 if (!isset($_SESSION['id'])) {

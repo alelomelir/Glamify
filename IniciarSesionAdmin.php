@@ -15,10 +15,10 @@ if ($filas["correo"]) {
     $_SESSION['nombre'] = $filas["nombre"];
     $_SESSION['contrasena'] = $filas["contrasena"];
 
-    header("location: catalogo.php");
+    header("location: ./verProductos.php");
 
 } else {
-    header("Location: ./inicioSesion.php");
+    header("Location: ./inicioSesionAdmin.php");
 }
 
 

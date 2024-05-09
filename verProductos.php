@@ -10,6 +10,23 @@
 
 <body>
   <div class="container">
+    <p class="name">Glamify</p>
+    <nav>
+
+      <?php
+      if (isset($_SESSION['correo'])) {
+        ?> <a href="cerrar.php"> Cerrar Sesión </a>
+        <a href="carrito.php"> Carrito </a>
+      <?php } else { ?>
+        <a href="inicioSesion.php"> Iniciar Sesión </a>
+        <?php
+      }
+      ?>
+
+    </nav>
+  </div>
+
+  <div class="container1">
     <table class="tabla">
       <thead>
         <tr>
@@ -23,7 +40,7 @@
       </thead>
       <tbody>
         <?php
-        include "./registro.php";
+        include "./conexion.php";
 
         $sql = mysqli_query($connection, "SELECT * FROM productos");
 

@@ -3,7 +3,7 @@ include "./conexion.php";
 session_start();
 
 if (isset($_SESSION['id'])) {
-    header('Location: ./catalogo.php');
+    header('Location: ./verProductos.php');
     exit;
 }
 
@@ -32,7 +32,7 @@ if (isset($_SESSION['id'])) {
         <div class="form-container">
 
             <div class="login-box">
-                <h2>Login</h2>
+                <h2>Hi Admin</h2>
                 <form method="POST" action="iniciarSesion.php">
                     <div class="user-box">
                         <input type="text" name="correo" required=""><br>
