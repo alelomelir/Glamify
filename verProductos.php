@@ -17,18 +17,21 @@ session_start();
     <p class="name">Glamify</p>
     <nav>
 
+
       <?php
       if (isset($_SESSION['correo'])) {
         ?> <a href="cerrar.php"> Cerrar Sesión </a>
-        <a href="carrito.php"> Carrito </a>
+        <a href="registroProducto.html"> Registrar Producto </a>
+
       <?php } else { ?>
         <a href="inicioSesion.php"> Iniciar Sesión </a>
         <?php
       }
+
       ?>
 
       <?php if ($_SESSION['admin']) { ?>
-        <a href="registroProducto.php"> Agregar Productos </a>
+        <a href="registroProducto.php"> </a>
         <?php
       } ?>
 
@@ -63,9 +66,14 @@ session_start();
             <td><?php echo $row['descripcion'] ?></td>
             <td><?php echo $row['precio'] ?></td>
           </tr>
-          <?php
-        }
-        ?>
+
+          <td>
+            <form action="./eliminarProducto.php" method="POST">
+              <input type="hidden" value="<?php echo $row['nombre']; ?>" name="nombre"> <!-- Corrección aquí -->
+              <input class="button" type="submit" value="Eliminar Producto">
+            </form>
+          </td>
+        <?php } ?>
       </tbody>
     </table>
   </div>

@@ -18,23 +18,24 @@ session_start();
         <div class="container">
             <p class="name">Glamify</p>
             <nav>
+                <a href="index.html">Home</a>
 
                 <?php
-                if (isset($_SESSION['correo'])) {
-                    ?> <a href="cerrar.php"> Cerrar Sesión </a>
-                    <a href="carrito.php"> Carrito </a>
-                    <?php
-                    if (($_SESSION['admin'])) {
+                if (($_SESSION['admin'])) {
 
-                        ?> <a href="verProductos.php"> Ver productos </a>
-                    <?php }
+                    ?> <a href="verProductos.php"> Ver productos </a>
+                <?php }
+                if (isset($_SESSION['correo'])) {
+                    ?>
+                    <a href="carrito.php"> Carrito </a>
+                    <a href="cerrar.php"> Cerrar Sesión </a>
+                    <?php
                 } else { ?>
                     <a href="inicioSesion.php"> Iniciar Sesión </a>
                     <?php
                 }
                 ?>
-                <a href="index.html">Home <i class="fas fa-house"></i></a>
-                <a href="verProductos.php"> Ver productos </a>
+
             </nav>
         </div>
         <input type="checkbox" id="btn-menu">
@@ -72,11 +73,12 @@ session_start();
                         <p>Precio: <?php echo $row['precio'] ?></p>
 
                         <form action="agregarCarrito.php" method="POST">
-                            <input type="hidden" value="<?php $row['nombre'] ?>" name="nombre">
-                            <input type="hidden" value="<?php $row['categoria'] ?>" name="categoria">
-                            <input type="hidden" value="<?php $row['descripcion'] ?>" name="descripcion">
-                            <input type="hidden" value="<?php $row['precio'] ?>" name="precio">
-                            <input type="submit">Agregar al carrito</input>
+                            <input type="hidden" value="<?php echo $row['imagen']; ?>" name="imagen">
+                            <input type="hidden" value="<?php echo $row['nombre']; ?>" name="nombre">
+                            <input type="hidden" value="<?php echo $row['categoria']; ?>" name="categoria">
+                            <input type="hidden" value="<?php echo $row['descripcion']; ?>" name="descripcion">
+                            <input type="hidden" value="<?php echo $row['precio']; ?>" name="precio">
+                            <input type="submit" class="button" value="Agregar al carrito">
 
                         </form>
                     </div>
