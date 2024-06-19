@@ -22,7 +22,7 @@ if ($filas["correo"]) {
 
     } else {
         $_SESSION['admin'] = false;
-        header("location: ./catalogo.php");
+        header("location: ./carrito.html");
     }
 
 } else {

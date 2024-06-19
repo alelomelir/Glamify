@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+		/>
+		<title>Carrito</title>
+		<link rel="stylesheet" href="carrito.css" />
+	</head>
+	<body>
+		<header>
+			<h1>Carrito</h1>
+            <div class="container">
+                <nav>
+                    <a href="index.html">Home</a>
+                    <?php
+                    if (($_SESSION['admin'])) {
+                        ?>
+                        <a href="verProductos.php"> Ver productos </a>
+                    <?php }
+                    if (isset($_SESSION['correo'])) {
+                        ?>
+                        <a href="carrito.html"> </a>
+                        <a href="cerrar.php"> Cerrar Sesión </a>
+                        <?php
+                    } else { ?>
+                        <a href="inicioSesion.php"> Iniciar Sesión </a>
+                        <?php
+                    }
+                    ?>
+                </nav>
+            </div>
+			<div class="container-icon">
+				<div class="container-cart-icon">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke-width="1.5"
+						stroke="currentColor"
+						class="icon-cart"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="M15.75 10.5V6a3.75 3.75 0 10-7.5 0v4.5m11.356-1.993l1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 01-1.12-1.243l1.264-12A1.125 1.125 0 015.513 7.5h12.974c.576 0 1.059.435 1.119 1.007zM8.625 10.5a.375.375 0 11-.75 0 .375.375 0 01.75 0zm7.5 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"
+						/>
+					</svg>
+					<div class="count-products">
+						<span id="contador-productos">0</span>
+					</div>
+				</div>
+
+				<div class="container-cart-products hidden-cart">
+					<div class="row-product hidden">
+						<div class="cart-product">
+							<div class="info-cart-product">
+								<span class="cantidad-producto-carrito">1</span>
+								<p class="titulo-producto-carrito">Zapatos Nike</p>
+								<span class="precio-producto-carrito">$80</span>
+							</div>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								stroke-width="1.5"
+								stroke="currentColor"
+								class="icon-close"
+							>
+								<path
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									d="M6 18L18 6M6 6l12 12"
+								/>
+							</svg>
+						</div>
+					</div>
+
+					<div class="cart-total hidden">
+						<h3>Total:</h3>
+						<span class="total-pagar">$200</span>
+					</div>
+					<p class="cart-empty">El carrito está vacío</p>
+				</div>
+			</div>
+		</header>
+		<div class="container-items">
+			<div class="item">
+				<figure>
+					<img
+						src="https://www.dior.com/dw/image/v2/BGXS_PRD/on/demandware.static/-/Sites-master_dior/default/dw84c3ec82/Y0319000/Y0319000_C031900063_E01_GHC.jpg?sw=800"
+						alt="producto"
+					/>
+				</figure>
+				<div class="info-product">
+					<h2>Gloss Dior</h2>
+					<p class="price">1200</p>
+					<button class="btn-add-cart">Añadir al carrito</button>
+				</div>
+			</div>
+			<div class="item">
+				<figure>
+					<img
+						src="https://ss702.liverpool.com.mx/xl/1152702368.jpg"
+						alt="producto"
+					/>
+				</figure>
+				<div class="info-product">
+					<h2>Base MAC</h2>
+					<p class="price">800</p>
+					<button class="btn-add-cart">Añadir al carrito</button>
+				</div>
+			</div>
+			<div class="item">
+				<figure>
+					<img
+						src="https://www.soriana.com/dw/image/v2/BGBD_PRD/on/demandware.static/-/Sites-soriana-grocery-master-catalog/default/dw43a2a760/images/product/7509552750232_C.jpg?sw=445&sh=445&sm=fit"
+						alt="producto"
+					/>
+				</figure>
+				<div class="info-product">
+					<h2>Mascara de pestañas Maybelline</h2>
+					<p class="price">500</p>
+					<button class="btn-add-cart">Añadir al carrito</button>
+				</div>
+			</div>
+			<div class="item">
+				<figure>
+					<img
+						src="https://www.dior.com/dw/image/v2/BGXS_PRD/on/demandware.static/-/Sites-master_dior/default/dw1098fba4/Y0364006/Y0364006_C036400279_E01_GHC.jpg?sw=800"
+						alt="producto"
+					/>
+				</figure>
+				<div class="info-product">
+					<h2>Paeleta de ojos Dior</h2>
+					<p class="price">1400</p>
+					<button class="btn-add-cart">Añadir al carrito</button>
+				</div>
+			</div>
+		</div>
+
+		<script src="carrito.js"></script>
+	</body>
+</html>

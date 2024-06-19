@@ -26,7 +26,7 @@ session_start();
                 <?php }
                 if (isset($_SESSION['correo'])) {
                     ?>
-                    <a href="carrito.php"> Carrito </a>
+                    <a href="carrito.html"> Carrito </a>
                     <a href="cerrar.php"> Cerrar Sesión </a>
                     <?php
                 } else { ?>
