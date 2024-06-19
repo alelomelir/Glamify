@@ -33,12 +33,12 @@ if (isset($_SESSION['correo'])) {
     // Datos de la tienda
     $pdf->SetXY(25, 38);
     $pdf->Cell(60, 5, 'Ceres');
-    $caducidad = date("d-m-Y", strtotime($fecha . '+ 7 days'));
-    $pdf->Cell(0, 5, 'FECHA DE CADUCIDAD del pedido: ' . $caducidad . '');
+    //$caducidad = date("d-m-Y", strtotime($fecha . '+ 7 days'));
+    ///$pdf->Cell(0, 5, 'FECHA DE CADUCIDAD del pedido: ' . $caducidad . '');
     $pdf->SetXY(25, 40);
-    $pdf->Cell(40, 10, 'Calle San carlos #1044');
+    $pdf->Cell(40, 10, 'Avenida');
     $pdf->SetXY(25, 43);
-    $pdf->Cell(40, 10, '45236 Edo.Jalisco');
+    $pdf->Cell(40, 10, '45170 GDL');
     //Fin datos de la tienda
 
     //Datos del comprador
@@ -54,8 +54,8 @@ if (isset($_SESSION['correo'])) {
     $pdf->SetTextColor(0, 0, 0);
 
     $pdf->SetXY(25, 85);
-    $pdf->Cell(40, 10, 'Sabor', 1, 0, 'c');
-    $pdf->Cell(20, 10, 'Onzas', 1, 0, 'c');
+    $pdf->Cell(40, 10, 'Producto', 1, 0, 'c');
+    $pdf->Cell(20, 10, 'Descripcion', 1, 0, 'c');
     $pdf->Cell(20, 10, 'Precio ', 1, 0, 'c');
     $pdf->Cell(20, 10, 'Cantidad', 1, 0, 'c');
     $pdf->Cell(20, 10, 'iva', 1, 0, 'c');
@@ -69,7 +69,7 @@ if (isset($_SESSION['correo'])) {
         foreach ($_SESSION['carrito'] as $boton_id => $producto) {
             $pdf->SetX(25);
             $pdf->Cell(40, 5, $producto['NombreProducto'], 1, 0, "L");
-            $pdf->Cell(20, 5, $producto["Onzas"], 1, 0, "L");
+            $pdf->Cell(20, 5, $producto["Descripcion"], 1, 0, "L");
             $pdf->Cell(20, 5, "$" . $producto['Precio'], 1, 0, "L");
             $pdf->Cell(20, 5, $producto['cantidad'], 1, 0, "L");
             $iva = $producto['subtotal'] * 0.16;
@@ -102,7 +102,7 @@ if (isset($_SESSION['correo'])) {
     $pdf->SetXY($x + 10, 210);
     $pdf->Cell(0, 5, 'Numero de cuenta al cual depositar', 0, 0, 'C');
     $pdf->SetXY($x + 10, 215);
-    $pdf->Cell(0, 5, '2235168540121519', 70, 0, 'C');
+    $pdf->Cell(0, 5, '52412287632', 70, 0, 'C');
     //Output the document
     $nombredoc = 'Resumen del pedido ' . $email . Date('F_j_Y') . '.' . 'pdf';
     $pdf->Output($nombredoc, 'F');

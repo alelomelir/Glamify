@@ -19,11 +19,10 @@ session_start();
             <p class="name">Glamify</p>
             <nav>
                 <a href="index.html">Home</a>
-
                 <?php
                 if (($_SESSION['admin'])) {
-
-                    ?> <a href="verProductos.php"> Ver productos </a>
+                    ?>
+                    <a href="verProductos.php"> Ver productos </a>
                 <?php }
                 if (isset($_SESSION['correo'])) {
                     ?>
@@ -35,7 +34,6 @@ session_start();
                     <?php
                 }
                 ?>
-
             </nav>
         </div>
         <input type="checkbox" id="btn-menu">
@@ -79,10 +77,8 @@ session_start();
                             <input type="hidden" value="<?php echo $row['descripcion']; ?>" name="descripcion">
                             <input type="hidden" value="<?php echo $row['precio']; ?>" name="precio">
                             <input type="submit" class="button" value="Agregar al carrito">
-
                         </form>
                     </div>
-
                 </div>
                 <?php
             }
@@ -97,12 +93,3 @@ session_start();
 </body>
 
 </html>
-<?php
-include "./conexion.php";
-session_start();
-
-if (!isset($_SESSION['id'])) {
-    header("Location: ./inicioSesion.php");
-    exit;
-}
-?>
